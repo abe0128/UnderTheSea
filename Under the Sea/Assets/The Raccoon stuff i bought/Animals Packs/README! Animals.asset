@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fcb0528820550499d051030855ca6d, type: 3}
+  m_Name: README! Animals
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: 2044553abe6893e47b7abe476a2f0291, type: 3}
+  title: Malbers Animals
+  sections:
+  - heading: DOCUMENTATION
+    text: Find out what every script does...
+    linkText: Animal Controller
+    url: https://docs.google.com/document/d/1NBy_RQan4Snv6loWhjRZH5UA7jPw6T2JeZiCikCfuSI/edit?usp=sharing
+  - heading: Integrations
+    text: All Malbers Assets have integrations with the most popular Assets on the
+      Store. More are being added constantly
+    linkText: Official Integrations
+    url: https://docs.google.com/document/d/1NBy_RQan4Snv6loWhjRZH5UA7jPw6T2JeZiCikCfuSI/edit#heading=h.3tue5saqox44
+  - heading: 
+    text: Integrations usually needs extra scripts to connect the 3rd party Assets;  or
+      you just need a PREFAB ready to drop on your scene.. you can find those on the
+    linkText: Integration Folder
+    url: http://bit.ly/HAPIntegrations
+  - heading: Got Feedback?
+    text: 'Let us know what you think or ask any questions you might have on the FORUM. '
+    linkText: Forum Thread
+    url: https://forum.unity.com/threads/440812/
+  - heading: Social
+    text: Chat with me on the official Facebook page
+    linkText: Malbers Animations
+    url: https://www.facebook.com/MalberSAnimations
+  - heading: 
+    text: Follow me on Twitter to stay tunned for new updates
+    linkText: Twitter
+    url: https://twitter.com/MalberShark

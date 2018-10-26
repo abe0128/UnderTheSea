@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Fly
   - Ground
   - Water
   layers:
@@ -27,7 +28,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Animal
   - 
   - 
   - 
