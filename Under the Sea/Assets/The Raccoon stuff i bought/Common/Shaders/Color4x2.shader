@@ -1,3 +1,5 @@
+// Upgrade NOTE: upgraded instancing buffer 'MalbersColor4x2' to new syntax.
+
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
 Shader "Malbers/Color4x2"
@@ -34,55 +36,63 @@ Shader "Malbers/Color4x2"
 		uniform float _Metallic;
 		uniform float _Smoothness;
 
-		UNITY_INSTANCING_CBUFFER_START(MalbersColor4x2)
+		UNITY_INSTANCING_BUFFER_START(MalbersColor4x2)
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color1)
+#define _Color1_arr MalbersColor4x2
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color2)
+#define _Color2_arr MalbersColor4x2
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color3)
+#define _Color3_arr MalbersColor4x2
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color4)
+#define _Color4_arr MalbersColor4x2
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color5)
+#define _Color5_arr MalbersColor4x2
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color6)
+#define _Color6_arr MalbersColor4x2
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color7)
+#define _Color7_arr MalbersColor4x2
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color8)
-		UNITY_INSTANCING_CBUFFER_END
+#define _Color8_arr MalbersColor4x2
+		UNITY_INSTANCING_BUFFER_END(MalbersColor4x2)
 
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
-			float4 _Color1_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color1);
+			float4 _Color1_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color1_arr, _Color1);
 			float temp_output_3_0_g128 = 1.0;
 			float temp_output_7_0_g128 = 4.0;
 			float temp_output_9_0_g128 = 2.0;
 			float temp_output_8_0_g128 = 2.0;
-			float4 _Color2_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color2);
+			float4 _Color2_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color2_arr, _Color2);
 			float temp_output_3_0_g127 = 2.0;
 			float temp_output_7_0_g127 = 4.0;
 			float temp_output_9_0_g127 = 2.0;
 			float temp_output_8_0_g127 = 2.0;
-			float4 _Color3_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color3);
+			float4 _Color3_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color3_arr, _Color3);
 			float temp_output_3_0_g129 = 3.0;
 			float temp_output_7_0_g129 = 4.0;
 			float temp_output_9_0_g129 = 2.0;
 			float temp_output_8_0_g129 = 2.0;
-			float4 _Color4_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color4);
+			float4 _Color4_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color4_arr, _Color4);
 			float temp_output_3_0_g130 = 4.0;
 			float temp_output_7_0_g130 = 4.0;
 			float temp_output_9_0_g130 = 2.0;
 			float temp_output_8_0_g130 = 2.0;
-			float4 _Color5_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color5);
+			float4 _Color5_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color5_arr, _Color5);
 			float temp_output_3_0_g126 = 1.0;
 			float temp_output_7_0_g126 = 4.0;
 			float temp_output_9_0_g126 = 1.0;
 			float temp_output_8_0_g126 = 2.0;
-			float4 _Color6_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color6);
+			float4 _Color6_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color6_arr, _Color6);
 			float temp_output_3_0_g131 = 2.0;
 			float temp_output_7_0_g131 = 4.0;
 			float temp_output_9_0_g131 = 1.0;
 			float temp_output_8_0_g131 = 2.0;
-			float4 _Color7_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color7);
+			float4 _Color7_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color7_arr, _Color7);
 			float temp_output_3_0_g133 = 3.0;
 			float temp_output_7_0_g133 = 4.0;
 			float temp_output_9_0_g133 = 1.0;
 			float temp_output_8_0_g133 = 2.0;
-			float4 _Color8_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color8);
+			float4 _Color8_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color8_arr, _Color8);
 			float temp_output_3_0_g132 = 4.0;
 			float temp_output_7_0_g132 = 4.0;
 			float temp_output_9_0_g132 = 1.0;

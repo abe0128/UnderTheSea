@@ -111,14 +111,14 @@ public class PlayerController : MonoBehaviour {
         {
             facing_right = true;
             facing_left = false;
-            transform.position = new Vector3(transform.position.x + movement_speed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - movement_speed);
         }
         // move player left
         if (Input.GetKey(KeyCode.A))
         {
             facing_right = false;
             facing_left = true;
-            transform.position = new Vector3(transform.position.x - movement_speed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + movement_speed);
         }
     }
 

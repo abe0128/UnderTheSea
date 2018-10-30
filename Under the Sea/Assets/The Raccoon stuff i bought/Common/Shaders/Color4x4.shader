@@ -1,3 +1,5 @@
+// Upgrade NOTE: upgraded instancing buffer 'MalbersColor4x4' to new syntax.
+
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
 Shader "Malbers/Color4x4"
@@ -42,103 +44,119 @@ Shader "Malbers/Color4x4"
 		uniform float _Metallic;
 		uniform float _Smoothness;
 
-		UNITY_INSTANCING_CBUFFER_START(MalbersColor4x4)
+		UNITY_INSTANCING_BUFFER_START(MalbersColor4x4)
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color1)
+#define _Color1_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color2)
+#define _Color2_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color3)
+#define _Color3_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color4)
+#define _Color4_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color5)
+#define _Color5_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color6)
+#define _Color6_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color7)
+#define _Color7_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color8)
+#define _Color8_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color9)
+#define _Color9_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color10)
+#define _Color10_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color11)
+#define _Color11_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color12)
+#define _Color12_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color_13)
+#define _Color_13_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color_14)
+#define _Color_14_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color_15)
+#define _Color_15_arr MalbersColor4x4
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color_16)
-		UNITY_INSTANCING_CBUFFER_END
+#define _Color_16_arr MalbersColor4x4
+		UNITY_INSTANCING_BUFFER_END(MalbersColor4x4)
 
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
-			float4 _Color1_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color1);
+			float4 _Color1_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color1_arr, _Color1);
 			float temp_output_3_0_g160 = 1.0;
 			float temp_output_7_0_g160 = 4.0;
 			float temp_output_9_0_g160 = 4.0;
 			float temp_output_8_0_g160 = 4.0;
-			float4 _Color2_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color2);
+			float4 _Color2_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color2_arr, _Color2);
 			float temp_output_3_0_g164 = 2.0;
 			float temp_output_7_0_g164 = 4.0;
 			float temp_output_9_0_g164 = 4.0;
 			float temp_output_8_0_g164 = 4.0;
-			float4 _Color3_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color3);
+			float4 _Color3_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color3_arr, _Color3);
 			float temp_output_3_0_g163 = 3.0;
 			float temp_output_7_0_g163 = 4.0;
 			float temp_output_9_0_g163 = 4.0;
 			float temp_output_8_0_g163 = 4.0;
-			float4 _Color4_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color4);
+			float4 _Color4_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color4_arr, _Color4);
 			float temp_output_3_0_g159 = 4.0;
 			float temp_output_7_0_g159 = 4.0;
 			float temp_output_9_0_g159 = 4.0;
 			float temp_output_8_0_g159 = 4.0;
-			float4 _Color5_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color5);
+			float4 _Color5_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color5_arr, _Color5);
 			float temp_output_3_0_g161 = 1.0;
 			float temp_output_7_0_g161 = 4.0;
 			float temp_output_9_0_g161 = 3.0;
 			float temp_output_8_0_g161 = 4.0;
-			float4 _Color6_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color6);
+			float4 _Color6_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color6_arr, _Color6);
 			float temp_output_3_0_g162 = 2.0;
 			float temp_output_7_0_g162 = 4.0;
 			float temp_output_9_0_g162 = 3.0;
 			float temp_output_8_0_g162 = 4.0;
-			float4 _Color7_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color7);
+			float4 _Color7_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color7_arr, _Color7);
 			float temp_output_3_0_g165 = 3.0;
 			float temp_output_7_0_g165 = 4.0;
 			float temp_output_9_0_g165 = 3.0;
 			float temp_output_8_0_g165 = 4.0;
-			float4 _Color8_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color8);
+			float4 _Color8_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color8_arr, _Color8);
 			float temp_output_3_0_g155 = 4.0;
 			float temp_output_7_0_g155 = 4.0;
 			float temp_output_9_0_g155 = 3.0;
 			float temp_output_8_0_g155 = 4.0;
-			float4 _Color9_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color9);
+			float4 _Color9_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color9_arr, _Color9);
 			float temp_output_3_0_g156 = 1.0;
 			float temp_output_7_0_g156 = 4.0;
 			float temp_output_9_0_g156 = 2.0;
 			float temp_output_8_0_g156 = 4.0;
-			float4 _Color10_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color10);
+			float4 _Color10_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color10_arr, _Color10);
 			float temp_output_3_0_g157 = 2.0;
 			float temp_output_7_0_g157 = 4.0;
 			float temp_output_9_0_g157 = 2.0;
 			float temp_output_8_0_g157 = 4.0;
-			float4 _Color11_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color11);
+			float4 _Color11_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color11_arr, _Color11);
 			float temp_output_3_0_g158 = 3.0;
 			float temp_output_7_0_g158 = 4.0;
 			float temp_output_9_0_g158 = 2.0;
 			float temp_output_8_0_g158 = 4.0;
-			float4 _Color12_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color12);
+			float4 _Color12_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color12_arr, _Color12);
 			float temp_output_3_0_g154 = 4.0;
 			float temp_output_7_0_g154 = 4.0;
 			float temp_output_9_0_g154 = 2.0;
 			float temp_output_8_0_g154 = 4.0;
-			float4 _Color_13_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color_13);
+			float4 _Color_13_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color_13_arr, _Color_13);
 			float temp_output_3_0_g167 = 1.0;
 			float temp_output_7_0_g167 = 4.0;
 			float temp_output_9_0_g167 = 1.0;
 			float temp_output_8_0_g167 = 4.0;
-			float4 _Color_14_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color_14);
+			float4 _Color_14_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color_14_arr, _Color_14);
 			float temp_output_3_0_g172 = 2.0;
 			float temp_output_7_0_g172 = 4.0;
 			float temp_output_9_0_g172 = 1.0;
 			float temp_output_8_0_g172 = 4.0;
-			float4 _Color_15_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color_15);
+			float4 _Color_15_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color_15_arr, _Color_15);
 			float temp_output_3_0_g173 = 3.0;
 			float temp_output_7_0_g173 = 4.0;
 			float temp_output_9_0_g173 = 1.0;
 			float temp_output_8_0_g173 = 4.0;
-			float4 _Color_16_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color_16);
+			float4 _Color_16_Instance = UNITY_ACCESS_INSTANCED_PROP(_Color_16_arr, _Color_16);
 			float temp_output_3_0_g171 = 4.0;
 			float temp_output_7_0_g171 = 4.0;
 			float temp_output_9_0_g171 = 1.0;
