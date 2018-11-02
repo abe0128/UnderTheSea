@@ -7,6 +7,9 @@ TagManager:
   - Fly
   - Ground
   - Water
+  - TriggerRightRotation
+  - TriggerLeftRotation
+  - EventBus
   layers:
   - Default
   - TransparentFX
