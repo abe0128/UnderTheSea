@@ -10,6 +10,7 @@ TagManager:
   - TriggerRightRotation
   - TriggerLeftRotation
   - EventBus
+  - Food
   layers:
   - Default
   - TransparentFX

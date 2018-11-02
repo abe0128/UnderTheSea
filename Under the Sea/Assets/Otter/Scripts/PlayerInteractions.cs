@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour {
 
-    private PlayerCamFollow playerCamFollow;  // To hold the script of 
+    private PlayerCamFollow playerCamFollow;    // To hold the script of PlayerCamFollow
+    private PlayerUI playerUI;                  // To hold the script of PlayerUI
 
     // Use this for initialization
     void Start () {
-        playerCamFollow = GameObject.FindGameObjectWithTag("EventBus").GetComponent<PlayerCamFollow>(); // set script to the 
+        playerCamFollow = GameObject.FindGameObjectWithTag("EventBus").GetComponent<PlayerCamFollow>(); // set script to the PlayerCamFollow
+        playerUI = GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<PlayerUI>();   // set script to the PlayerUI
     }
 
     /// <summary>
@@ -28,6 +30,15 @@ public class PlayerInteractions : MonoBehaviour {
         {
             playerCamFollow.MoveQuadrantLeft();
             Destroy(other.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Food")
+        {
+            playerUI.IncrementFoodCount();
+            Destroy(collision.gameObject);
         }
     }
 }
