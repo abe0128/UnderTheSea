@@ -16,6 +16,7 @@ public class PlayerCamFollow : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        RenderSettings.fog = true;                              // set fog shader through RenderSettings (Window->Lighting->Other->Fog)
         quadrant = 0;                                           // set quadrant to the first one
         cam = GameObject.FindGameObjectWithTag("MainCamera");   // set cam GameObject to the main camera object
         player = GameObject.FindGameObjectWithTag("Player");    // set player GameObject to the player object

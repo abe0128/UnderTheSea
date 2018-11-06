@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MineBehavior : MonoBehaviour {
 
-	public GameObject Player;
+	private GameObject Player;
 	private bool entered;
 	public float speed;
 	
