@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.49782032, g: 0.4997697, b: 0.50146496, a: 1}
+  m_IndirectSpecularColor: {r: 0.31566772, g: 0.40839556, b: 0.4998743, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -110,8 +109,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &283885190
 Prefab:
@@ -528,11 +525,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &812717291
 Transform:
   m_ObjectHideFlags: 0
@@ -641,8 +638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decoration:
-  - {fileID: 1787065362943244, guid: f8e67112d97c19243aa2f7d46e26668b, type: 2}
-  - {fileID: 1091119500650304, guid: dbe433773a244b947a496414e73b7bf7, type: 2}
+  - {fileID: 1553811508926916, guid: 805c78fa38cfeaa4e899482aba3ed339, type: 2}
+  - {fileID: 1902075932686122, guid: d124b15f71b59d84aa89cd55574981ad, type: 2}
   spawnPoints:
   - {fileID: 314215240}
   - {fileID: 1534107690}
@@ -677,7 +674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decoration:
-  - {fileID: 1216633878106394, guid: aa2c907f0cb445c41bd98e7dd638d14f, type: 2}
+  - {fileID: 1216633878106394, guid: d11d1360ece3e2e40a81a241971ac8da, type: 2}
+  - {fileID: 1145098875258518, guid: f51b8502d274ee648bbe90c065764220, type: 2}
   spawnPoints:
   - {fileID: 2117794324}
   - {fileID: 2095287793}
@@ -980,6 +978,10 @@ Prefab:
     - target: {fileID: 4382017736623968, guid: daf0fe41c4cfc1849b90002ee07bf18f, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037178241964640, guid: daf0fe41c4cfc1849b90002ee07bf18f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -5.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daf0fe41c4cfc1849b90002ee07bf18f, type: 2}
