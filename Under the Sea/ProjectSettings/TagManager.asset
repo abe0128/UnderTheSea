@@ -11,6 +11,7 @@ TagManager:
   - TriggerLeftRotation
   - EventBus
   - Food
+  - Coral_Deco1
   layers:
   - Default
   - TransparentFX

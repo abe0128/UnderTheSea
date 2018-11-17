@@ -2162,6 +2162,7 @@ GameObject:
   - component: {fileID: 1031955264}
   - component: {fileID: 1031955266}
   - component: {fileID: 1031955267}
+  - component: {fileID: 1031955268}
   m_Layer: 0
   m_Name: Spawn_deco_manager
   m_TagString: Untagged
@@ -2175,7 +2176,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1031955263}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 307d38327987dbd42b9c4aee73f36fdf, type: 3}
   m_Name: 
@@ -2347,6 +2348,138 @@ MonoBehaviour:
   - {fileID: 1423470362}
   - {fileID: 441184783}
   - {fileID: 1986488347}
+--- !u!114 &1031955268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031955263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac2c492a778de74489c78ad758856bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Coral_Deco1
+    prefab: {fileID: 1553811508926916, guid: 805c78fa38cfeaa4e899482aba3ed339, type: 2}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
+  - tag: 
+    prefab: {fileID: 0}
+    size: 0
 --- !u!1 &1063300363
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,7 +3428,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1691575218821396, guid: daf0fe41c4cfc1849b90002ee07bf18f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daf0fe41c4cfc1849b90002ee07bf18f, type: 2}
