@@ -960,7 +960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88d37138afa8284c87ee1bfd390e603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   speed: 0.5
   step: 0.01
 --- !u!114 &114248226784608074
