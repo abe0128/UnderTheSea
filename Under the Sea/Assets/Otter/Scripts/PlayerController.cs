@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Rigidbody rockPrefab;                // To hold the prefab of the rock
+    public Transform leftHand;                  // To hold the transform from where rock will shoot out from
     public float swimVelocity;                  // Changeable value, swim velocity
 
     private PlayerAnimation current_animation;  // To hold the current otter animation
@@ -12,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private float stamina;                      // To hold the player's stamina
     private float distanceToGround;             // To hold the current disntance from ground
     private float stamina_offset;               // To hold the countdown to stamina offset
+    private float rock_force;                   // To hold the force that the rock is being thrown
+    private bool throwRight;                    // To hold the direction in which the otter is facing, used for getting direction in rock throw
 
     /// <summary>
     /// PlayerAnimation: Enum operator, For player animation
@@ -35,6 +39,8 @@ public class PlayerController : MonoBehaviour
         distanceToGround = GetComponent<Collider>().bounds.extents.y;   // set value to to the bottom of the object
         stamina = 100.0f;                                               // set base stamina to 100 (int)
         stamina_offset = 0.0f;                                          // set stamina offset to 0.0f (float), later to reset stamina off-time
+        rock_force = 750f;                                              // set force of throw to 750
+        throwRight = true;                                              // set direction to starting facing direction, they're set in PlayerMovement function
     }
 
     // Update is called once per frame
@@ -68,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             current_animation = PlayerAnimation.Swim;
+            throwRight = true;
             transform.position = new Vector3(transform.position.x + (playerCamFollow.GetX()), transform.position.y, transform.position.z + (playerCamFollow.GetZ()));
             transform.rotation = Quaternion.Euler(0, playerCamFollow.GetRightRotation(), 0);
         }
@@ -75,6 +82,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.A))
         {
             current_animation = PlayerAnimation.Swim;
+            throwRight = false;
             transform.position = new Vector3(transform.position.x + (-playerCamFollow.GetX()), transform.position.y, transform.position.z + (-playerCamFollow.GetZ()));
             transform.rotation = Quaternion.Euler(0, playerCamFollow.GetLeftRotation(), 0);
         }
@@ -100,9 +108,12 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void PlayerAttack()
     {
+        // If mouse is clicked, starts a corutine to throw the rock, and set's current animation to attack
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            StopCoroutine("ThrowRockTimer");
             current_animation = PlayerAnimation.Attack;
+            StartCoroutine("ThrowRockTimer");
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
@@ -156,9 +167,37 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("swim_right", true);
                 break;
             case PlayerAnimation.Attack:
-                anim.SetBool("attack", true);
+                anim.Play("Attack");
+                //anim.SetBool("attack", true);
                 break;
         }
+    }
+
+    // IEnumerator, To get rock to get thrown right as the animation looks as it's throwing the rock
+    IEnumerator ThrowRockTimer()
+    {
+        yield return new WaitForSeconds(.4f);
+        ThrowRock();
+    }
+
+    /// <summary>
+    /// ThrowRock, Starts a process of instantiating the rockPrefab, and forces it in the direction the otter is facing
+    /// </summary>
+    private void ThrowRock()
+    {
+        // Instantiate rock and save it into rockClone
+        Rigidbody rockClone = Instantiate(rockPrefab, leftHand.position, leftHand.rotation) as Rigidbody;
+
+        // If otter is looking right, throw rock to the right
+        if (throwRight)
+        {
+            rockClone.AddForce(new Vector3(playerCamFollow.GetX() * 20, 0, playerCamFollow.GetZ() * 20) * rock_force); // 0.05 * 20 = 1
+        }
+        else
+        {
+            rockClone.AddForce(new Vector3(-playerCamFollow.GetX() * 20, 0, -playerCamFollow.GetZ() * 20) * rock_force); // 0.05 * 20 = 1
+        }
+        
     }
 
     /// <summary>

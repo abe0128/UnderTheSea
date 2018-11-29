@@ -222,7 +222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1237797541351340
 GameObject:
   m_ObjectHideFlags: 1
@@ -510,6 +510,21 @@ GameObject:
   - component: {fileID: 4067338606904322}
   m_Layer: 20
   m_Name: L HorseLink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1454680879727328
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4423672319783720}
+  m_Layer: 20
+  m_Name: StartRockThrowHere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -897,7 +912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1883147129587752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1169,7 @@ Transform:
   - {fileID: 4759337769353264}
   - {fileID: 4957351122065840}
   - {fileID: 4990043139576540}
+  - {fileID: 4423672319783720}
   m_Father: {fileID: 4978571202922140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1423,6 +1439,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4121021580971436}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4423672319783720
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1454680879727328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4118864383728404}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4423697125816968
 Transform:
@@ -2031,7 +2060,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865414086391588}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 42b16888dccfed94fb39302aa553204d, type: 3}
   m_Controller: {fileID: 9100000, guid: a68228626fdce934dbd134326d014bad, type: 2}
   m_CullingMode: 0
@@ -2069,6 +2098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96b8e1c668e44240a6652ecebb7b6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rockPrefab: {fileID: 54286231739295126, guid: bb2b6c44973c94d40969ad25ff17ec1a,
+    type: 2}
+  leftHand: {fileID: 4423672319783720}
   swimVelocity: 6
 --- !u!114 &114191839157330802
 MonoBehaviour:
