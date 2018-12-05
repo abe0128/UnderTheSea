@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject kelpWhip;
     public Rigidbody rockPrefab;                // To hold the prefab of the rock
     public Transform leftHand;                  // To hold the transform from where rock will shoot out from
     public float swimVelocity;                  // Changeable value, swim velocity
 
     private PlayerAnimation current_animation;  // To hold the current otter animation
     private PlayerCamFollow playerCamFollow;    // To hold the script of the 
+    private PlayerUI playerUI;                  // To hold the script of the PlayerUI
     private Animator anim;                      // To hold the otter animator, (which animation to play)
     private float stamina;                      // To hold the player's stamina
     private float distanceToGround;             // To hold the current disntance from ground
@@ -22,18 +24,21 @@ public class PlayerController : MonoBehaviour
     /// 1. Idle: Animation for no movement
     /// 2. Swim: Animation for swimming (left and right movement)
     /// 3. Attack: Animation for rock throw attack
+    /// 4. KelpWhip: Animation for attack is performed, same as rock, but sets kelp active or inactive
     /// </summary>
     private enum PlayerAnimation
     {
         Idle,
         Swim,
-        Attack
+        Attack,
+        TailWhip
     }
 
     // Use this for initialization
     void Start()
     {
         playerCamFollow = GameObject.FindGameObjectWithTag("EventBus").GetComponent<PlayerCamFollow>();
+        playerUI = GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<PlayerUI>();
         current_animation = PlayerAnimation.Idle;                       // set current animation to Idle
         anim = GetComponent<Animator>();                                // set Animator component to anim
         distanceToGround = GetComponent<Collider>().bounds.extents.y;   // set value to to the bottom of the object
@@ -108,12 +113,33 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void PlayerAttack()
     {
-        // If mouse is clicked, starts a corutine to throw the rock, and set's current animation to attack
+        // If mouse is clicked, Starts an attack
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            StopCoroutine("ThrowRockTimer");
-            current_animation = PlayerAnimation.Attack;
-            StartCoroutine("ThrowRockTimer");
+            // Switch statement: Get's current weapon in weapon wheel (PlayerUI Script)
+            switch (playerUI.getCurrentWeapon())
+            {
+                // Case for rock
+                case 1:
+                    // Make sure player has rock count
+                    if (playerUI.getRockCount() > 0)
+                    {
+                        StopCoroutine("ThrowRockTimer");
+                        current_animation = PlayerAnimation.Attack;
+                        StartCoroutine("ThrowRockTimer");
+                    }
+                    break;
+                // Case for kelp whip
+                case 2:
+                    StopCoroutine(KelpWhipTimer());
+                    current_animation = PlayerAnimation.Attack;
+                    StartCoroutine(KelpWhipTimer());
+                    break;
+                // Case for tail whip
+                case 3:
+                    current_animation = PlayerAnimation.TailWhip;
+                    break;
+            }
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
@@ -168,9 +194,19 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerAnimation.Attack:
                 anim.Play("Attack");
-                //anim.SetBool("attack", true);
+                break;
+            case PlayerAnimation.TailWhip:
+                anim.Play("TailWhip");
                 break;
         }
+    }
+
+    // IEnumerator, Activate the kelp just as long as the attack animation, set it inactive after 1 sec.
+    IEnumerator KelpWhipTimer()
+    {
+        kelpWhip.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        kelpWhip.SetActive(false);
     }
 
     // IEnumerator, To get rock to get thrown right as the animation looks as it's throwing the rock
@@ -197,7 +233,7 @@ public class PlayerController : MonoBehaviour
         {
             rockClone.AddForce(new Vector3(-playerCamFollow.GetX() * 20, 0, -playerCamFollow.GetZ() * 20) * rock_force); // 0.05 * 20 = 1
         }
-        
+        playerUI.DecreaseRockCount();
     }
 
     /// <summary>

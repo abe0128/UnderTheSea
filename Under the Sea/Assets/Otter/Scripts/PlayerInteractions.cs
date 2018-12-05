@@ -49,5 +49,10 @@ public class PlayerInteractions : MonoBehaviour
             playerUI.IncrementFoodCount();
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "Rock")
+        {
+            playerUI.IncreaseRockCount();
+            Destroy(collision.gameObject);
+        }
     }
 }

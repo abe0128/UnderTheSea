@@ -19,7 +19,7 @@ public class PlayerUI : MonoBehaviour {
 
     void Start()
     {
-        rock_counter = 0;
+        rock_counter = 5;
         food_counter = 0;
         player_lives = 5;
         current_weapon = 1;
@@ -78,6 +78,32 @@ public class PlayerUI : MonoBehaviour {
                 rock_count_text.enabled = false;
                 break;
         }
+    }
+
+    public void DecreaseRockCount()
+    {
+        if(rock_counter > 0)
+        {
+            rock_counter--;
+        }
+    }
+
+    public void IncreaseRockCount()
+    {
+        if(rock_counter < 5)
+        {
+            rock_counter++;
+        }
+    }
+
+    public int getRockCount()
+    {
+        return rock_counter;
+    }
+
+    public int getCurrentWeapon()
+    {
+        return current_weapon;
     }
 
     public void IncrementFoodCount()

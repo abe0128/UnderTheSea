@@ -302,6 +302,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1293868223436996
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4994034654191092}
+  - component: {fileID: 33685235368264162}
+  - component: {fileID: 23313822992477112}
+  m_Layer: 0
+  m_Name: KelpWhip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1304265723235756
 GameObject:
   m_ObjectHideFlags: 1
@@ -926,6 +943,7 @@ GameObject:
   - component: {fileID: 54986170658627572}
   - component: {fileID: 114821330525762686}
   - component: {fileID: 114030483497540958}
+  - component: {fileID: 135689567862468466}
   m_Layer: 20
   m_Name: Otter(Player)
   m_TagString: Player
@@ -1449,7 +1467,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4994034654191092}
   m_Father: {fileID: 4118864383728404}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2014,6 +2033,60 @@ Transform:
   m_Father: {fileID: 4118864383728404}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 180}
+--- !u!4 &4994034654191092
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293868223436996}
+  m_LocalRotation: {x: -0.6367767, y: 0.3559267, z: -0.52582735, w: -0.43742117}
+  m_LocalPosition: {x: -0.061, y: 0.026, z: 0.035}
+  m_LocalScale: {x: 0.5062499, y: 0.36212495, z: 0.48662564}
+  m_Children: []
+  m_Father: {fileID: 4423672319783720}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -68.58, y: 0, z: 0}
+--- !u!23 &23313822992477112
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293868223436996}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: a0cc5eb9af3e4dc45b132fd51ffc1bcb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33685235368264162
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293868223436996}
+  m_Mesh: {fileID: 4300000, guid: 0eaa8a71fe7dbc44cba06f1606930ac2, type: 3}
 --- !u!54 &54986170658627572
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -2051,8 +2124,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29738998, y: 0.52500606, z: 0.5350647}
-  m_Center: {x: 0.016916275, y: 0.23749697, z: 0.13626099}
+  m_Size: {x: 0.29738998, y: 0.43475437, z: 0.49928284}
+  m_Center: {x: 0.016916275, y: 0.19237113, z: 0.15415192}
 --- !u!95 &95514126774264880
 Animator:
   serializedVersion: 3
@@ -2098,6 +2171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96b8e1c668e44240a6652ecebb7b6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kelpWhip: {fileID: 1293868223436996}
   rockPrefab: {fileID: 54286231739295126, guid: bb2b6c44973c94d40969ad25ff17ec1a,
     type: 2}
   leftHand: {fileID: 4423672319783720}
@@ -2237,7 +2311,7 @@ SphereCollider:
   m_GameObject: {fileID: 1644407849208316}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
@@ -2249,7 +2323,7 @@ SphereCollider:
   m_GameObject: {fileID: 1274266415480424}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
@@ -2261,9 +2335,21 @@ SphereCollider:
   m_GameObject: {fileID: 1648836128253882}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.02
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135689567862468466
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1883147129587752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135974865048925986
 SphereCollider:
@@ -2273,7 +2359,7 @@ SphereCollider:
   m_GameObject: {fileID: 1345244547208774}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
@@ -2285,7 +2371,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1602214774851484}
   m_Material: {fileID: 13400000, guid: 54174b87a6301064ea8788686f85bda8, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.08274131
   m_Height: 0.16690765
   m_Direction: 1
@@ -2298,7 +2384,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1602214774851484}
   m_Material: {fileID: 13400000, guid: 54174b87a6301064ea8788686f85bda8, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.032149136
   m_Height: 0.12151399
   m_Direction: 1
@@ -2324,7 +2410,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1209601217269374}
   m_Material: {fileID: 13400000, guid: 54174b87a6301064ea8788686f85bda8, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.1134291
   m_Height: 0.41121128
   m_Direction: 0
@@ -2337,7 +2423,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1034287714798380}
   m_Material: {fileID: 13400000, guid: 54174b87a6301064ea8788686f85bda8, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.12469075
   m_Height: 0.27540594
   m_Direction: 0

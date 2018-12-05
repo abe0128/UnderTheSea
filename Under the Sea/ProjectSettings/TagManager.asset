@@ -12,6 +12,8 @@ TagManager:
   - EventBus
   - Food
   - Coral_Deco1
+  - Rock
+  - KelpWhip
   layers:
   - Default
   - TransparentFX
