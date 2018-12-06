@@ -312,9 +312,10 @@ GameObject:
   - component: {fileID: 4994034654191092}
   - component: {fileID: 33685235368264162}
   - component: {fileID: 23313822992477112}
+  - component: {fileID: 65456217710119536}
   m_Layer: 0
   m_Name: KelpWhip
-  m_TagString: Untagged
+  m_TagString: KelpWhip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2102,6 +2103,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &65456217710119536
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293868223436996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9315315, y: 4.351072, z: 0.8636553}
+  m_Center: {x: 0.01837527, y: 2.075536, z: 0.03486619}
 --- !u!65 &65660601063590490
 BoxCollider:
   m_ObjectHideFlags: 1
