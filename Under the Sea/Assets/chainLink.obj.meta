@@ -1,19 +1,18 @@
 fileFormatVersion: 2
-guid: 496dfb8cae14a7349b522ab90bb4faea
-timeCreated: 1543526725
+guid: 5f4a501ffb02d6446bf80b6d3316318b
+timeCreated: 1544131689
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pTorus1
+    100002: polySurface9_pSphere2
     400000: //RootNode
-    400002: pTorus1
-    2100000: pTorus1Mat
-    2100002: initialShadingGroup
-    2300000: pTorus1
-    3300000: pTorus1
-    4300000: pTorus1
+    400002: polySurface9_pSphere2
+    2100000: polySurface9_pSphere2Mat
+    2300000: polySurface9_pSphere2
+    3300000: polySurface9_pSphere2
+    4300000: polySurface9_pSphere2
   externalObjects: {}
   materials:
     importMaterials: 1

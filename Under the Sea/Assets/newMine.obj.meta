@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 496dfb8cae14a7349b522ab90bb4faea
-timeCreated: 1543526725
+guid: ddac6eb01828765499b4c0b368f332e6
+timeCreated: 1543530375
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pTorus1
-    400000: //RootNode
-    400002: pTorus1
-    2100000: pTorus1Mat
-    2100002: initialShadingGroup
-    2300000: pTorus1
-    3300000: pTorus1
-    4300000: pTorus1
+    100000: initialShadingGroup_pSphere2
+    100002: //RootNode
+    100004: pSphere2
+    400000: initialShadingGroup_pSphere2
+    400002: //RootNode
+    400004: pSphere2
+    2100000: initialShadingGroup_pSphere2Mat
+    2100002: chainLink1_initialShadingGroup1
+    2100004: initialShadingGroup1
+    2300000: initialShadingGroup_pSphere2
+    2300002: pSphere2
+    3300000: initialShadingGroup_pSphere2
+    3300002: pSphere2
+    4300000: initialShadingGroup_pSphere2
+    4300002: pSphere2
   externalObjects: {}
   materials:
     importMaterials: 1
