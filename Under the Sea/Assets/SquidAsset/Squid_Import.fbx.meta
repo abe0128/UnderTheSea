@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: 109bdb84e2e624c4f9a76943b33ba990
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Head
+    100002: Head.001
+    100004: Head_Handle
+    100006: Head_Handle_end
+    100008: InnerTentacle_handle.L
+    100010: InnerTentacle_handle.L_end
+    100012: InnerTentacle_handle.R
+    100014: InnerTentacle_handle.R_end
+    100016: LargeTentacle_handle.L
+    100018: LargeTentacle_handle.L_end
+    100020: LargeTentacle_handle.R
+    100022: LargeTentacle_handle.R_end
+    100024: MIdTentacle_handle.L
+    100026: MIdTentacle_handle.L_end
+    100028: MIdTentacle_handle.R
+    100030: MIdTentacle_handle.R_end
+    100032: Root.Bone
+    100034: //RootNode
+    100036: Squid
+    100038: Squid_Armature
+    100040: Tenticale 1.L
+    100042: Tenticale 1.L.001
+    100044: Tenticale 1.L.002
+    100046: Tenticale 1.R
+    100048: Tenticale 1.R.001
+    100050: Tenticale 1.R.002
+    100052: Tenticale 2.L
+    100054: Tenticale 2.L.001
+    100056: Tenticale 2.L.002
+    100058: Tenticale 2.L.003
+    100060: Tenticale 2.L.004
+    100062: Tenticale 2.L.005
+    100064: Tenticale 2.L.006
+    100066: Tenticale 2.L.006_end
+    100068: Tenticale 2.R
+    100070: Tenticale 2.R.001
+    100072: Tenticale 2.R.002
+    100074: Tenticale 2.R.003
+    100076: Tenticale 2.R.004
+    100078: Tenticale 2.R.005
+    100080: Tenticale 2.R.006
+    100082: Tenticale 2.R.006_end
+    100084: Tenticale 3.L
+    100086: Tenticale 3.L.001
+    100088: Tenticale 3.R
+    100090: Tenticale 3.R.001
+    100092: Tenticale 4.L
+    100094: Tenticale 4.L.001
+    100096: Tenticale 4.R
+    100098: Tenticale 4.R.001
+    100100: Tenticale 5.L
+    100102: Tenticale 5.L.001
+    100104: Tenticale 5.L.001_end
+    100106: Tenticale 5.L_end
+    100108: Tenticale 5.R
+    100110: Tenticale 5.R.001
+    100112: Tenticale 5.R.001_end
+    100114: Tenticale 5.R_end
+    400000: Head
+    400002: Head.001
+    400004: Head_Handle
+    400006: Head_Handle_end
+    400008: InnerTentacle_handle.L
+    400010: InnerTentacle_handle.L_end
+    400012: InnerTentacle_handle.R
+    400014: InnerTentacle_handle.R_end
+    400016: LargeTentacle_handle.L
+    400018: LargeTentacle_handle.L_end
+    400020: LargeTentacle_handle.R
+    400022: LargeTentacle_handle.R_end
+    400024: MIdTentacle_handle.L
+    400026: MIdTentacle_handle.L_end
+    400028: MIdTentacle_handle.R
+    400030: MIdTentacle_handle.R_end
+    400032: Root.Bone
+    400034: //RootNode
+    400036: Squid
+    400038: Squid_Armature
+    400040: Tenticale 1.L
+    400042: Tenticale 1.L.001
+    400044: Tenticale 1.L.002
+    400046: Tenticale 1.R
+    400048: Tenticale 1.R.001
+    400050: Tenticale 1.R.002
+    400052: Tenticale 2.L
+    400054: Tenticale 2.L.001
+    400056: Tenticale 2.L.002
+    400058: Tenticale 2.L.003
+    400060: Tenticale 2.L.004
+    400062: Tenticale 2.L.005
+    400064: Tenticale 2.L.006
+    400066: Tenticale 2.L.006_end
+    400068: Tenticale 2.R
+    400070: Tenticale 2.R.001
+    400072: Tenticale 2.R.002
+    400074: Tenticale 2.R.003
+    400076: Tenticale 2.R.004
+    400078: Tenticale 2.R.005
+    400080: Tenticale 2.R.006
+    400082: Tenticale 2.R.006_end
+    400084: Tenticale 3.L
+    400086: Tenticale 3.L.001
+    400088: Tenticale 3.R
+    400090: Tenticale 3.R.001
+    400092: Tenticale 4.L
+    400094: Tenticale 4.L.001
+    400096: Tenticale 4.R
+    400098: Tenticale 4.R.001
+    400100: Tenticale 5.L
+    400102: Tenticale 5.L.001
+    400104: Tenticale 5.L.001_end
+    400106: Tenticale 5.L_end
+    400108: Tenticale 5.R
+    400110: Tenticale 5.R.001
+    400112: Tenticale 5.R.001_end
+    400114: Tenticale 5.R_end
+    2100000: Material
+    4300000: Squid
+    7400000: Squid_Armature|Idle
+    7400002: Squid_Armature|spin
+    7400004: Squid_Armature|Strike1
+    7400006: Squid_Armature|Strike2
+    7400008: Squid_Armature|swim
+    9500000: //RootNode
+    13700000: Squid
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Squid_Armature|Idle
+      takeName: Squid_Armature|Idle
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Squid_Armature|spin
+      takeName: Squid_Armature|spin
+      firstFrame: 0
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Squid_Armature|swim
+      takeName: Squid_Armature|swim
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
