@@ -29,7 +29,23 @@ public class PlayerCamFollow : MonoBehaviour
 
     void LateUpdate()
     {
+        SpeedUpDebug();
         FollowPlayer();   // Constant movement of camera, follows player
+    }
+
+    private void SpeedUpDebug()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            camera_speed = 200f;
+            player_speed = 0.5f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            camera_speed = 10f;
+            player_speed = 0.05f;
+        }
+
     }
 
     /// <summary>
