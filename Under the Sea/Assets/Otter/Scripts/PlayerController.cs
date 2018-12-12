@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float stamina_offset;               // To hold the countdown to stamina offset
     private float rock_force;                   // To hold the force that the rock is being thrown
     private bool throwRight;                    // To hold the direction in which the otter is facing, used for getting direction in rock throw
+    public bool isDead;
 
     /// <summary>
     /// PlayerAnimation: Enum operator, For player animation
@@ -31,7 +32,8 @@ public class PlayerController : MonoBehaviour
         Idle,
         Swim,
         Attack,
-        TailWhip
+        TailWhip,
+        Dead
     }
 
     // Use this for initialization
@@ -46,17 +48,21 @@ public class PlayerController : MonoBehaviour
         stamina_offset = 0.0f;                                          // set stamina offset to 0.0f (float), later to reset stamina off-time
         rock_force = 750f;                                              // set force of throw to 750
         throwRight = true;                                              // set direction to starting facing direction, they're set in PlayerMovement function
+        isDead = false;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        StaminaRegen();                             // Always check to see if we can regenerate players stamina
-        PlayerMovement();                           // Calls PlayerMoment function, allows drift motion (left to right)
-        PlayerSwim();                               // Calls PlayerSwim function, allows swimming motion (up)
-        PlayerAttack();                             // Calls PlayerAttack function, 
-        SetPlayerAnimation();                       // Calls SetPlayerAnimation function, 
-        GetComponent<Rigidbody>().drag = 4;         // Set player's drag to four, from Ridigbody component (illusion of underwater)
+        if (!isDead)
+        {
+            StaminaRegen();                             // Always check to see if we can regenerate players stamina
+            PlayerMovement();                           // Calls PlayerMoment function, allows drift motion (left to right)
+            PlayerSwim();                               // Calls PlayerSwim function, allows swimming motion (up)
+            PlayerAttack();                             // Calls PlayerAttack function, 
+            SetPlayerAnimation();                       // Calls SetPlayerAnimation function, 
+            GetComponent<Rigidbody>().drag = 4;         // Set player's drag to four, from Ridigbody component (illusion of underwater)
+        }
     }
 
     /// <summary>
@@ -243,6 +249,16 @@ public class PlayerController : MonoBehaviour
     public float GetPlayerStamina()
     {
         return stamina;
+    }
+
+    public void SetIfDead()
+    {
+        isDead = !isDead;
+    }
+
+    public void SetIdle()
+    {
+        current_animation = PlayerAnimation.Idle;
     }
 
 }

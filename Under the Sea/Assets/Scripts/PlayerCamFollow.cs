@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerCamFollow : MonoBehaviour
 {
+    public Transform spawnLocation; // To hold the spawn location of the player
+    public Transform camLocation;   // To hold the cam location of the camera
+    public GameObject playerPrefab; // To hold the otter prefab for instantiation, at start of game
 
     private GameObject cam;         // To hold camera object
     private GameObject player;      // To hold player object
@@ -19,6 +22,7 @@ public class PlayerCamFollow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Instantiate(playerPrefab, spawnLocation.position, spawnLocation.rotation);  // Instantiate the player at the start of the game.
         RenderSettings.fog = true;                              // set fog shader through RenderSettings (Window->Lighting->Other->Fog)
         quadrant = 0;                                           // set quadrant to the first one
         cam = GameObject.FindGameObjectWithTag("MainCamera");   // set cam GameObject to the main camera object
@@ -29,10 +33,13 @@ public class PlayerCamFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        SpeedUpDebug();
+        SpeedUpDebug();   // Set for debuging purposes, increases speed of otter
         FollowPlayer();   // Constant movement of camera, follows player
     }
 
+    /// <summary>
+    /// Debuging purposes: Speeds up player and camera to traverse through the map quicker
+    /// </summary>
     private void SpeedUpDebug()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -103,6 +110,18 @@ public class PlayerCamFollow : MonoBehaviour
                 break;
         }
         cam.transform.position = Vector3.MoveTowards(cam.transform.position, cam_offset, step); // Camera moves toward player, with every new offset
+    }
+
+    // Get current quadrant
+    public int GetQuadrant()
+    {
+        return quadrant;
+    }
+
+    // set current quadrant to a specific quadrant
+    public void SetQuadrant(int q)
+    {
+        quadrant = q;
     }
 
     // Increment quadrant by 1
