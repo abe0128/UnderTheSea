@@ -14,6 +14,7 @@ public class BreakBox : MonoBehaviour
         if(collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("TailWhip"))
         {
             GetComponent<BoxCollider>().enabled = false;
+            GetComponent<AudioSource>().Play();
             for(int i = 0; i < childArray.Length; i++)
             {
                 Physics.IgnoreCollision(collision.gameObject.GetComponent<BoxCollider>(), childArray[i].GetComponent<MeshCollider>());

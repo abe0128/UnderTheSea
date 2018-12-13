@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioClip[] audioClips;
     public GameObject kelpWhip;
     public Rigidbody rockPrefab;                // To hold the prefab of the rock
     public Transform leftHand;                  // To hold the transform from where rock will shoot out from
     public float swimVelocity;                  // Changeable value, swim velocity
 
+    private AudioSource audioSource;
     private PlayerAnimation current_animation;  // To hold the current otter animation
     private PlayerCamFollow playerCamFollow;    // To hold the script of the 
     private PlayerUI playerUI;                  // To hold the script of the PlayerUI
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private float rock_force;                   // To hold the force that the rock is being thrown
     private bool throwRight;                    // To hold the direction in which the otter is facing, used for getting direction in rock throw
     public bool isDead;
+    public bool isAttacking;
 
     /// <summary>
     /// PlayerAnimation: Enum operator, For player animation
@@ -41,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         playerCamFollow = GameObject.FindGameObjectWithTag("EventBus").GetComponent<PlayerCamFollow>();
         playerUI = GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<PlayerUI>();
+        audioSource = GetComponent<AudioSource>();
         current_animation = PlayerAnimation.Idle;                       // set current animation to Idle
         anim = GetComponent<Animator>();                                // set Animator component to anim
         distanceToGround = GetComponent<Collider>().bounds.extents.y;   // set value to to the bottom of the object
@@ -49,6 +53,7 @@ public class PlayerController : MonoBehaviour
         rock_force = 750f;                                              // set force of throw to 750
         throwRight = true;                                              // set direction to starting facing direction, they're set in PlayerMovement function
         isDead = false;
+        isAttacking = false;
     }
 
     // Update is called once per frame
@@ -98,7 +103,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, playerCamFollow.GetLeftRotation(), 0);
         }
         // When no input for movement is set, set current animation to idle
-        else if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) && current_animation != PlayerAnimation.Attack) current_animation = PlayerAnimation.Idle;
+        else if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) /*&& current_animation != PlayerAnimation.Attack*/) current_animation = PlayerAnimation.Idle;
     }
 
     /// <summary>
@@ -120,7 +125,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerAttack()
     {
         // If mouse is clicked, Starts an attack
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
         {
             // Switch statement: Get's current weapon in weapon wheel (PlayerUI Script)
             switch (playerUI.getCurrentWeapon())
@@ -130,20 +135,28 @@ public class PlayerController : MonoBehaviour
                     // Make sure player has rock count
                     if (playerUI.getRockCount() > 0)
                     {
-                        StopCoroutine("ThrowRockTimer");
-                        current_animation = PlayerAnimation.Attack;
+                        //StopCoroutine("ThrowRockTimer");
+                        //current_animation = PlayerAnimation.Attack;
                         StartCoroutine("ThrowRockTimer");
                     }
                     break;
                 // Case for kelp whip
                 case 2:
-                    StopCoroutine(KelpWhipTimer());
-                    current_animation = PlayerAnimation.Attack;
+                    //StopCoroutine(KelpWhipTimer());
+                    //current_animation = PlayerAnimation.Attack;
                     StartCoroutine(KelpWhipTimer());
                     break;
                 // Case for tail whip
                 case 3:
-                    current_animation = PlayerAnimation.TailWhip;
+                    isAttacking = true;
+                    if (!audioSource.isPlaying)
+                    {
+                        audioSource.clip = audioClips[2];
+                        audioSource.Play();
+                        anim.Play("TailWhip");
+                        
+                    }
+                    isAttacking = false;
                     break;
             }
         }
@@ -189,7 +202,6 @@ public class PlayerController : MonoBehaviour
         {
             // Idle happens when player is still, and on the ground
             case PlayerAnimation.Idle:
-                anim.SetBool("attack", false);
                 if (IsGrounded())
                 {
                     anim.SetBool("swim_right", false);
@@ -198,28 +210,39 @@ public class PlayerController : MonoBehaviour
             case PlayerAnimation.Swim:
                 anim.SetBool("swim_right", true);
                 break;
-            case PlayerAnimation.Attack:
-                anim.Play("Attack");
-                break;
-            case PlayerAnimation.TailWhip:
-                anim.Play("TailWhip");
-                break;
         }
     }
 
     // IEnumerator, Activate the kelp just as long as the attack animation, set it inactive after 1 sec.
     IEnumerator KelpWhipTimer()
     {
+        isAttacking = true;
         kelpWhip.SetActive(true);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = audioClips[1];
+            audioSource.Play();
+            anim.Play("Attack");
+        }
+        
         yield return new WaitForSeconds(1f);
         kelpWhip.SetActive(false);
+        isAttacking = false;
     }
 
     // IEnumerator, To get rock to get thrown right as the animation looks as it's throwing the rock
     IEnumerator ThrowRockTimer()
     {
+        isAttacking = true;
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = audioClips[0];
+            audioSource.Play();
+            anim.Play("Attack");
+        }
         yield return new WaitForSeconds(.4f);
         ThrowRock();
+        isAttacking = false;
     }
 
     /// <summary>
