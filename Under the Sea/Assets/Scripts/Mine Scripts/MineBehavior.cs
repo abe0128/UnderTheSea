@@ -22,12 +22,17 @@ public class MineBehavior : MonoBehaviour {
 	{
 		if(col.gameObject.tag == "Player")
 		{
+			Debug.Log("IN");
 			entered = true;
 		}
-		else{
+
+	}
+	private void OnTriggerExit(Collider col)
+	{
+		if(col.gameObject.tag == "Player")
+		{
 			entered = false;
 		}
-
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
