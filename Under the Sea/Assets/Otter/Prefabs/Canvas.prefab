@@ -389,16 +389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a75cfb47029ab094fac8cbf3eee7f125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives_text: {fileID: 114807335653127610}
-  food_text: {fileID: 114195461651514958}
-  rock_count_text: {fileID: 114893082033536704}
-  rock_image: {fileID: 114362983737681686}
-  tail_image: {fileID: 114377167233683276}
-  kelp_image: {fileID: 114157050725780252}
-  rock_image_permanent: {fileID: 0}
-  tail_image_permanent: {fileID: 0}
-  kelp_image_permanent: {fileID: 0}
-  background_image: {fileID: 0}
 --- !u!114 &114807335653127610
 MonoBehaviour:
   m_ObjectHideFlags: 1

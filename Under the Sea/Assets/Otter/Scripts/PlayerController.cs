@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && stamina > 0)
         {
             GetComponent<Rigidbody>().velocity = Vector3.up * swimVelocity; // Player Swim, uses Rigidbody, set for player's vector to swim up * swimvelocity
-            stamina -= 0.03f;                                                   // Reduce stamina upon swim physics
+            stamina -= 0.003f;                                                   // Reduce stamina upon swim physics
         }
     }
 
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         // Regenerate stamina when rested after, 3 seconds
         if (stamina_offset >= 180)
         {
-            stamina += 0.005f;
+            stamina += 0.05f;
         }
         //Debug.Log(stamina);
 
