@@ -18,7 +18,6 @@ public class PlayerUI : MonoBehaviour {
     public GameObject wheel;
 
     private PlayerController playerControl;
-    private LevelManager levelManager;
     
 
     private int food_counter;
@@ -48,7 +47,6 @@ public class PlayerUI : MonoBehaviour {
         wheel.SetActive(false);
         showui = false;
         num = Stamina_bar.GetComponent<Image>().fillAmount;
-        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>(); ;
     }
 
     void Update()
@@ -59,7 +57,7 @@ public class PlayerUI : MonoBehaviour {
         ShowUI();
         if (player_lives == 0)
         {
-            levelManager.LoadLevel("GameOverScene");
+            GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().LoadLevel("GameOverScene");
         }
 
     }
@@ -225,6 +223,11 @@ public class PlayerUI : MonoBehaviour {
     public int getCurrentWeapon()
     {
         return current_weapon;
+    }
+
+    public void LoseLife()
+    {
+        player_lives--;
     }
     
 

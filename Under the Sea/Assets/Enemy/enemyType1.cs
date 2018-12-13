@@ -11,7 +11,7 @@ public class enemyType1 : MonoBehaviour {
      public int health;
      public void Start ()
      {
-         health = 1;
+         health = 3;
          //to start at zero
          StartCoroutine (Oscillate (OccilationFuntion.Sine, 0.05f));
          //to start at scalar value

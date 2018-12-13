@@ -11,7 +11,7 @@ public class enemyType3 : MonoBehaviour {
 	public int health;
 	// Use this for initialization
 	void Start () {
-		health = 1;
+		health = 3;
 
 		StartCoroutine(Oscillate(OccilationFunction.Sine, 0.05f));
 	}
@@ -26,7 +26,7 @@ public class enemyType3 : MonoBehaviour {
         // {
         //     StopAllCoroutines();
         // }
-	 }
+	 } 
 
     //  void OnCollisionExit(Collision other)
     //  {

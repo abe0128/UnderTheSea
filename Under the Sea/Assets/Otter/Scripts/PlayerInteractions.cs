@@ -96,6 +96,7 @@ public class PlayerInteractions : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             StartCoroutine(RelocatePlayer());
+            playerUI.LoseLife();
         }
     }
     /// <summary>

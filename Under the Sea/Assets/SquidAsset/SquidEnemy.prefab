@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  health: 0
+  health: 3
 --- !u!137 &137587702632190580
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

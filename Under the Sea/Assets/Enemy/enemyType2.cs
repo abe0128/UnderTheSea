@@ -19,7 +19,7 @@ public enum OccilationFuntion { Sine, Cosine }
          //to start at scalar value
          //StartCoroutine (Oscillate (OccilationFuntion.Cosine, 1f));
 		 
-		 health = 1;
+		 health = 4;
 		 transform.position = new Vector3( transform.position.x, 6, transform.position.z);
      }
 
