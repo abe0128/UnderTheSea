@@ -7,6 +7,7 @@ public class PlayerInteractions : MonoBehaviour
     private PlayerCamFollow playerCamFollow;    // To hold the script of PlayerCamFollow
     private PlayerController playerController;  // To hold the script of PlayerController
     private PlayerUI playerUI;                  // To hold the script of PlayerUI
+    private AudioSource audioSource;
     private Animator anim;                      // To hold the animator component
     private GameObject cam;                     // To hold the camer game object
     private int quadrant;                       // To hold the quadrant per checkpoint
@@ -20,6 +21,7 @@ public class PlayerInteractions : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera");                                           // set camera game object to cam
         quadrant = playerCamFollow.GetQuadrant();                                                       // set the current quadrant in PlayerCamFollow to quadrant
         anim = GetComponent<Animator>();                                                                // set the animator coponent to anim
+        audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -86,6 +88,8 @@ public class PlayerInteractions : MonoBehaviour
         if (collision.gameObject.tag == "Food")
         {
             playerUI.IncrementFoodCount();
+            audioSource.clip = playerController.audioClips[3];
+            audioSource.Play();
             Destroy(collision.gameObject);
         }
         // 2.

@@ -945,6 +945,7 @@ GameObject:
   - component: {fileID: 114821330525762686}
   - component: {fileID: 114030483497540958}
   - component: {fileID: 135689567862468466}
+  - component: {fileID: 82972994598829532}
   m_Layer: 20
   m_Name: Otter(Player)
   m_TagString: Player
@@ -2139,6 +2140,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.29738998, y: 0.43475437, z: 0.49928284}
   m_Center: {x: 0.016916275, y: 0.19237113, z: 0.15415192}
+--- !u!82 &82972994598829532
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1883147129587752}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95514126774264880
 Animator:
   serializedVersion: 3
@@ -2184,6 +2265,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96b8e1c668e44240a6652ecebb7b6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 6b161623254f4a54284e4977fcadc434, type: 3}
+  - {fileID: 8300000, guid: 267f34b30999a2c43ad903225b3c3812, type: 3}
+  - {fileID: 8300000, guid: 69a70d59f97fb2b4eb2853c9fda61f34, type: 3}
+  - {fileID: 8300000, guid: 555bf21d33221e84395cd45a2da947fc, type: 3}
   kelpWhip: {fileID: 1293868223436996}
   rockPrefab: {fileID: 54609559242122272, guid: d142d9cd399cb194c877818beff37ea1,
     type: 2}

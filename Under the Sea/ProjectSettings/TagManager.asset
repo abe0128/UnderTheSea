@@ -17,6 +17,7 @@ TagManager:
   - Pearl
   - Enemy
   - Wall
+  - LevelManager
   layers:
   - Default
   - TransparentFX
