@@ -58,6 +58,12 @@ public class PlayerInteractions : MonoBehaviour
             quadrant = playerCamFollow.GetQuadrant();
             Destroy(other.gameObject);
         }
+        if (other.gameObject.tag == "Food")
+        {
+            Physics.IgnoreCollision(other.gameObject.GetComponent<BoxCollider>(), GetComponent<BoxCollider>());
+            playerUI.IncrementFoodCount();
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)

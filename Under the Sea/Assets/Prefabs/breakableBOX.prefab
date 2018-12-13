@@ -1175,6 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562f49b9578ae4847a002b884ebc1964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodPrefab: {fileID: 1815022120132986, guid: 0aeb11cfc475fc24ab5a3135f5589f54, type: 2}
   childArray:
   - {fileID: 54468788413832490}
   - {fileID: 54680372006108396}
