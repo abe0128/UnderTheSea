@@ -13,11 +13,12 @@ public enum OccilationFuntion { Sine, Cosine }
 	 float enemyPosY;
      public void Start ()
      {
+		 player = GameObject.FindGameObjectWithTag("Player");
          //to start at zero
          StartCoroutine (Oscillate (OccilationFuntion.Sine, 0.05f));
          //to start at scalar value
          //StartCoroutine (Oscillate (OccilationFuntion.Cosine, 1f));
-		 player = GameObject.FindGameObjectWithTag("Player");
+		 
 		 health = 1;
 		 transform.position = new Vector3( transform.position.x, 6, transform.position.z);
      }
@@ -35,9 +36,9 @@ public enum OccilationFuntion { Sine, Cosine }
      {
          while (true)
          {
-			 if(player.transform.position.y > 2)
+			 if(player.transform.position.y > 3)
 			 {
-				 enemyPosY = (player.transform.position.y - 1.5f);
+				 enemyPosY = (player.transform.position.y - 2f);
 			 }
 			 else
 			 {
@@ -45,11 +46,15 @@ public enum OccilationFuntion { Sine, Cosine }
 			 }
              if (method == OccilationFuntion.Sine)
              {
-    			transform.position = new Vector3 (transform.position.x, enemyPosY, transform.position.z + Mathf.Sin (Time.time) * scalar);
+				 if(enemyPosY > 3)
+				 {
+					 transform.position = new Vector3 (transform.position.x, enemyPosY, transform.position.z + Mathf.Sin (Time.time) * scalar);
+				 }
+    			
              }
              else if (method == OccilationFuntion.Cosine)
              {
-                 transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z + Mathf.Cos(Time.time) * scalar);
+                 transform.position = new Vector3(transform.position.x, enemyPosY, transform.position.z + Mathf.Cos(Time.time) * scalar);
              }
              yield return new WaitForEndOfFrame ();
          }

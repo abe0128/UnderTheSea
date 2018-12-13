@@ -20,12 +20,23 @@ public class enemyType1 : MonoBehaviour {
     
  	 void OnCollisionEnter(Collision other)
 	 {
-		if(other.gameObject.tag == "Player")
+		if(other.gameObject.tag == "rock")
 		{
 			health -= 1;
 		}
-		
+        if(other.gameObject.tag == "KelpWhip")
+        {
+            StopAllCoroutines();
+        }
 	 }
+
+    //  void OnCollisionExit(Collision other)
+    //  {
+    //      if(other.gameObject.tag == "KelpWhip")
+    //      {
+    //          StartCoroutine(Oscillate(OccilationFuntion.Sine, 0.05f));
+    //      }
+    //  }
      private IEnumerator Oscillate (OccilationFuntion method, float scalar)
      {
          while (true)
