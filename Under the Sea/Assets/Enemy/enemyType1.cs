@@ -20,7 +20,7 @@ public class enemyType1 : MonoBehaviour {
     
  	 void OnCollisionEnter(Collision other)
 	 {
-		if(other.gameObject.tag == "rock")
+		if(other.gameObject.tag == "Rock")
 		{
 			health -= 1;
 		}

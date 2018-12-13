@@ -6,7 +6,7 @@ public class EnemyManager : MonoBehaviour {
 	
 	public GameObject[] enemyType1;
 	public GameObject enemyType2;
-	public GameObject[] enemyType3;
+	public GameObject enemyType3;
 	public GameObject[] enemyType4;
 
 	public List<GameObject> SpawnEnemyT1;
@@ -73,6 +73,6 @@ public class EnemyManager : MonoBehaviour {
 	}
 	void SpawnEnemy3(GameObject spawnPoint)
 	{
-		Instantiate(enemyType2,spawnPoint.transform);
+		Instantiate(enemyType3,spawnPoint.transform);
 	}
 }

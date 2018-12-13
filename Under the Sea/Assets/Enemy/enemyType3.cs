@@ -18,14 +18,14 @@ public class enemyType3 : MonoBehaviour {
 
 	 void OnCollisionEnter(Collision other)
 	 {
-		if(other.gameObject.tag == "rock")
+		if(other.gameObject.tag == "Rock")
 		{
 			health -= 1;
 		}
-        if(other.gameObject.tag == "KelpWhip")
-        {
-            StopAllCoroutines();
-        }
+        // if(other.gameObject.tag == "KelpWhip")
+        // {
+        //     StopAllCoroutines();
+        // }
 	 }
 
     //  void OnCollisionExit(Collision other)

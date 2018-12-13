@@ -15,7 +15,7 @@ public enum OccilationFuntion { Sine, Cosine }
      {
 		 player = GameObject.FindGameObjectWithTag("Player");
          //to start at zero
-         StartCoroutine (Oscillate (OccilationFuntion.Sine, 0.05f));
+         StartCoroutine (Oscillate (OccilationFuntion.Sine, 0.1f));
          //to start at scalar value
          //StartCoroutine (Oscillate (OccilationFuntion.Cosine, 1f));
 		 
@@ -23,22 +23,30 @@ public enum OccilationFuntion { Sine, Cosine }
 		 transform.position = new Vector3( transform.position.x, 6, transform.position.z);
      }
 
-	 void OnCollisionEnter(Collision other)
-	 {
-		if(other.gameObject.tag == "Player")
-		{
-			health -= 1;
-		}
+	//  void OnCollisionEnter(Collision other)
+	//  {
+	// 	if(other.gameObject.tag == "Player")
+	// 	{
+	// 		health -= 1;
+	// 	}
 
+	//  }
+
+	 void OnTriggerEnter(Collider col)
+	 {
+		 if(col.gameObject.tag == "Rock")
+		 {
+			 health--;
+		 }
 	 }
  
      private IEnumerator Oscillate (OccilationFuntion method, float scalar)
      {
          while (true)
          {
-			 if(player.transform.position.y > 3)
+			 if(player.transform.position.y > 2)
 			 {
-				 enemyPosY = (player.transform.position.y - 2f);
+				 enemyPosY = (player.transform.position.y - 1.5f);
 			 }
 			 else
 			 {
@@ -46,10 +54,7 @@ public enum OccilationFuntion { Sine, Cosine }
 			 }
              if (method == OccilationFuntion.Sine)
              {
-				 if(enemyPosY > 3)
-				 {
-					 transform.position = new Vector3 (transform.position.x, enemyPosY, transform.position.z + Mathf.Sin (Time.time) * scalar);
-				 }
+				transform.position = new Vector3 (transform.position.x, enemyPosY, transform.position.z + Mathf.Sin (Time.time) * scalar);
     			
              }
              else if (method == OccilationFuntion.Cosine)
