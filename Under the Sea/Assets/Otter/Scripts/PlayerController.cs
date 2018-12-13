@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         current_animation = PlayerAnimation.Idle;                       // set current animation to Idle
         anim = GetComponent<Animator>();                                // set Animator component to anim
         distanceToGround = GetComponent<Collider>().bounds.extents.y;   // set value to to the bottom of the object
-        stamina = 100.0f;                                               // set base stamina to 100 (int)
+        stamina = .25f;                                               // set base stamina to 100 (int)
         stamina_offset = 0.0f;                                          // set stamina offset to 0.0f (float), later to reset stamina off-time
         rock_force = 750f;                                              // set force of throw to 750
         throwRight = true;                                              // set direction to starting facing direction, they're set in PlayerMovement function
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             current_animation = PlayerAnimation.Swim;
             throwRight = true;
-            transform.position = new Vector3(transform.position.x + (playerCamFollow.GetX()), transform.position.y, transform.position.z + (playerCamFollow.GetZ()));
+            transform.position = new Vector3(transform.position.x  + (playerCamFollow.GetX()), transform.position.y, transform.position.z + (playerCamFollow.GetZ()));
             transform.rotation = Quaternion.Euler(0, playerCamFollow.GetRightRotation(), 0);
         }
         // move player left, changes swim animation, and rotations of player
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && stamina > 0)
         {
             GetComponent<Rigidbody>().velocity = Vector3.up * swimVelocity; // Player Swim, uses Rigidbody, set for player's vector to swim up * swimvelocity
-            stamina -= 3;                                                   // Reduce stamina upon swim physics
+            stamina -= 0.03f;                                                   // Reduce stamina upon swim physics
         }
     }
 
@@ -172,12 +172,12 @@ public class PlayerController : MonoBehaviour
         // Regenerate stamina when rested after, 3 seconds
         if (stamina_offset >= 180)
         {
-            stamina += 0.05f;
+            stamina += 0.005f;
         }
         //Debug.Log(stamina);
 
         stamina = (stamina < 0) ? 0 : stamina;      // ternary operator, Stamina can't go under 0
-        stamina = (stamina > 100) ? 100 : stamina;  // ternary operator, Stamina can't exceed 100
+        stamina = (stamina > .25f) ? .25f : stamina;  // ternary operator, Stamina can't exceed 100
     }
 
     /// <summary>
