@@ -20,7 +20,7 @@ public class BreakBox : MonoBehaviour
                 
                 childArray[i].GetComponent<Rigidbody>().useGravity = true;
                 childArray[i].GetComponent<Rigidbody>().isKinematic = false;
-                childArray[i].GetComponent<Rigidbody>().drag = 25f;
+                childArray[i].GetComponent<Rigidbody>().drag = 15f;
             }
             StartCoroutine(appearFood());
             Destroy(gameObject, 2.0f); 
