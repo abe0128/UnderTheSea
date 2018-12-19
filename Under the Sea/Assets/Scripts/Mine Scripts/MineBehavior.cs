@@ -1,6 +1,8 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//By Matthew Connolly
+// This is the behaviour of the mine.
 
 public class MineBehavior : MonoBehaviour {
 
@@ -15,10 +17,10 @@ public class MineBehavior : MonoBehaviour {
 	Vector3 lookAt;
 	// Use this for initialization
 	void Start () {
-		Player = GameObject.FindGameObjectWithTag("Player");
+		Player = GameObject.FindGameObjectWithTag("Player"); // finds player object
 	}
 	
-	private void OnTriggerEnter(Collider col)
+	private void OnTriggerEnter(Collider col) // if player is close it starts to follow
 	{
 		if(col.gameObject.tag == "Player")
 		{
@@ -27,7 +29,7 @@ public class MineBehavior : MonoBehaviour {
 		}
 
 	}
-	private void OnTriggerExit(Collider col)
+	private void OnTriggerExit(Collider col) //stops following
 	{
 		if(col.gameObject.tag == "Player")
 		{
@@ -36,7 +38,7 @@ public class MineBehavior : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(entered)
+		if(entered) // starts following the player if in range
 		{
 			step = speed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, step);

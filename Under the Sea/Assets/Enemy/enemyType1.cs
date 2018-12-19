@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//By Matthew Connolly
+// This is the script for the crap
 public class enemyType1 : MonoBehaviour {
 	// Use this for initialization
      public enum OccilationFuntion { Sine, Cosine }
@@ -13,7 +14,7 @@ public class enemyType1 : MonoBehaviour {
      {
          health = 3;
          //to start at zero
-         StartCoroutine (Oscillate (OccilationFuntion.Sine, 0.05f));
+         StartCoroutine (Oscillate (OccilationFuntion.Sine, 0.05f)); // starts the movement routine
          //to start at scalar value
          //StartCoroutine (Oscillate (OccilationFuntion.Cosine, 1f));
      }
@@ -22,11 +23,11 @@ public class enemyType1 : MonoBehaviour {
 	 {
 		if(other.gameObject.tag == "Rock")
 		{
-			health -= 1;
+			health -= 1; // decrease health if collides with rock
 		}
         if(other.gameObject.tag == "KelpWhip")
         {
-            StopAllCoroutines();
+            StopAllCoroutines(); // this doesn't work but was testing out to see if kelp whip could stop the movement of the enemy
         }
 	 }
 
@@ -37,7 +38,7 @@ public class enemyType1 : MonoBehaviour {
     //          StartCoroutine(Oscillate(OccilationFuntion.Sine, 0.05f));
     //      }
     //  }
-     private IEnumerator Oscillate (OccilationFuntion method, float scalar)
+     private IEnumerator Oscillate (OccilationFuntion method, float scalar) // movement script for the eneemy to move back and forth on the z axis
      {
          while (true)
          {
@@ -57,7 +58,7 @@ public class enemyType1 : MonoBehaviour {
      {
         if(health == 0)
         {
-            DestroyObject(this.gameObject);
+            DestroyObject(this.gameObject); // destroy the object when health is 0
         }
      }
 }
