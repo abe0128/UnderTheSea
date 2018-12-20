@@ -11,16 +11,15 @@ public class DecorationManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        for (int i = 0; i < spawnPoints.Length; i++)
+        for (int i = 0; i < spawnPoints.Length; i++) //array to place spawn point objects for objects to be spawned in
         {
             Spawn(i);
         }
 	}
 	
-	// Update is called once per frame
 	void Spawn (int spawnPointIndex)
     {
-        int decorationList = Random.Range(0, decoration.Length);
-        Instantiate(decoration[decorationList], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        int decorationList = Random.Range(0, decoration.Length); //place decorations randomly instead of placing the same one every time game is initialize
+        Instantiate(decoration[decorationList], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation); // place object(decorations) on these spawnpoints
 	}
 }
